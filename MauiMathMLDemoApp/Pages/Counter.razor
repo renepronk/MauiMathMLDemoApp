@@ -1,0 +1,102 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<table>
+    <tr>
+        <th>With variable</th>
+        <th>Without variable</th>
+    </tr>
+    <tr>
+        <td>
+            <!-- Simple math expression with variable -->
+            <math>
+                <mn>@currentCount</mn>
+                <mo>+</mo>
+                <mn>4</mn>
+            </math>
+        </td>
+        <td>
+            <!-- Simple math expression without variable -->
+            <math>
+                <mn>7</mn>
+                <mo>+</mo>
+                <mn>4</mn>
+            </math>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!-- Fraction with variable -->
+            <math>
+                <mfrac>
+                    <mn>@currentCount</mn>
+                    <mn>4</mn>
+                </mfrac>
+            </math>
+        </td>
+        <td>
+            <!-- Fraction without variable -->
+            <math>
+                <mfrac>
+                    <mn>7</mn>
+                    <mn>4</mn>
+                </mfrac>
+            </math>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!-- Power with variable -->
+            <math>
+                <msup>
+                    <mn>@currentCount</mn>
+                    <mn>4</mn>
+                </msup>
+            </math>
+        </td>
+        <td>
+            <!-- Power without variable -->
+            <math>
+                <msup>
+                    <mn>7</mn>
+                    <mn>4</mn>
+                </msup>
+            </math>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!-- Square root with variable -->
+            <math>
+                <mroot>
+                    <mn>@currentCount</mn>
+                    <mn>4</mn>
+                </mroot>
+            </math>
+        </td>
+        <td>
+            <!-- Square root without variable -->
+            <math>
+                <mroot>
+                    <mn>7</mn>
+                    <mn>4</mn>
+                </mroot>
+            </math>
+        </td>
+    </tr>
+
+</table>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
